@@ -12,7 +12,7 @@ public class RegistrationController : ControllerBase
 
     public RegistrationController()
     {
-        string connectionString = $"Host=localhost;Username=cubics;Password=timoha;Database=cubich";
+        string connectionString = $"Host=localhost;Username=cubich;Password=timoha;Database=cubich";
         _connection = new NpgsqlConnection(connectionString);
         _connection.Open();
     }
