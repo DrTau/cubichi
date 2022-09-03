@@ -27,12 +27,12 @@ public class RegistrationController : ControllerBase
     {
         try
         {
-            var command = new NpgsqlCommand($"SELECT 1 FROM users WHERE username = '{Username}'", _connection);
+            var command = new NpgsqlCommand($"SELECT 1 FROM \"users\" WHERE username = '{Username}'", _connection);
             if (command.ExecuteScalar() != null)
                 return BadRequest("User already exists");
 
-            command = new NpgsqlCommand($"INSERT INTO users(username, password) VALUES ('{Username}', ''encode(digest('{Password}', 'sha256'), 'hex'));");
-            command.ExecuteNonQuery();
+            var insertCommand = new NpgsqlCommand($"INSERT INTO \"users\"(username, password) VALUES ('{Username}', encode(digest('{Password}', 'sha256'), 'hex'));", _connection);
+            insertCommand.ExecuteNonQuery();
             return Ok();
         }
         catch (Exception ex)
