@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <Content Include="Program.cs" />
+    <Content Include="Models\User.cs" />
+    <Content Include="Models\UserReg.cs" />
+    <Content Include="dbcontext.cs" />
+    <Content Include="Models\1.cs" />
+    <Content Include="Controllers\RegistrationController.cs" />
+  </ItemGroup>
+</Project>
