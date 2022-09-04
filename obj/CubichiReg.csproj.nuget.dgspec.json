@@ -40,6 +40,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.Certificate": {
+              "target": "Package",
+              "version": "[6.0.8, )"
+            },
             "Npgsql": {
               "target": "Package",
               "version": "[6.0.6, )"
