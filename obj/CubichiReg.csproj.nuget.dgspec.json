@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\drtta\\Documents\\Programming\\cubichi\\CubichiReg.csproj": {}
+    "/home/doctor_tau/Programming/cubichi/CubichiReg.csproj": {}
   },
   "projects": {
-    "C:\\Users\\drtta\\Documents\\Programming\\cubichi\\CubichiReg.csproj": {
+    "/home/doctor_tau/Programming/cubichi/CubichiReg.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\drtta\\Documents\\Programming\\cubichi\\CubichiReg.csproj",
+        "projectUniqueName": "/home/doctor_tau/Programming/cubichi/CubichiReg.csproj",
         "projectName": "CubichiReg",
-        "projectPath": "C:\\Users\\drtta\\Documents\\Programming\\cubichi\\CubichiReg.csproj",
-        "packagesPath": "C:\\Users\\drtta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\drtta\\Documents\\Programming\\cubichi\\obj\\",
+        "projectPath": "/home/doctor_tau/Programming/cubichi/CubichiReg.csproj",
+        "packagesPath": "/home/doctor_tau/.nuget/packages/",
+        "outputPath": "/home/doctor_tau/Programming/cubichi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\drtta\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/doctor_tau/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -59,11 +57,16 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.8, 6.0.8]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -72,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.108/RuntimeIdentifierGraph.json"
         }
       }
     }

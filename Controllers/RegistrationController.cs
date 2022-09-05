@@ -22,16 +22,16 @@ public class RegistrationController : ControllerBase
         _connection.Close();
     }
 
-    [HttpPost, Route("register/{Username}/{Password}")]
-    public IActionResult Register(string Username, string Password)
+    [HttpPost, Route("register")]
+    public IActionResult Register(UserReg user)
     {
         try
         {
-            var command = new NpgsqlCommand($"SELECT 1 FROM \"users\" WHERE username = '{Username}'", _connection);
+            var command = new NpgsqlCommand($"SELECT 1 FROM \"users\" WHERE username = '{user.UserName}'", _connection);
             if (command.ExecuteScalar() != null)
                 return BadRequest("User already exists");
 
-            var insertCommand = new NpgsqlCommand($"INSERT INTO \"users\"(username, password) VALUES ('{Username}', encode(digest('{Password}', 'sha256'), 'hex'));", _connection);
+            var insertCommand = new NpgsqlCommand($"INSERT INTO \"users\"(username, password) VALUES ('{user.UserName}', encode(digest('{user.Password}', 'sha256'), 'hex'));", _connection);
             insertCommand.ExecuteNonQuery();
             return Ok();
         }
