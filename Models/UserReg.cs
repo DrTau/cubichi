@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace CubichiReg.Models;
+namespace cubichi.Models;
 
 public class UserReg
 {
