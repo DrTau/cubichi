@@ -32,7 +32,7 @@ public class RegistrationController : ControllerBase
         {
             var command = new NpgsqlCommand($"SELECT 1 FROM \"users\" WHERE username = '{user.UserName}'", _connection);
             if (command.ExecuteScalar() != null)
-                return BadRequest("User already exists");
+                return Conflict("User already exists");
 
             var insertCommand = new NpgsqlCommand($"INSERT INTO \"users\"(username, password) VALUES ('{user.UserName}', encode(digest('{user.Password}', 'sha256'), 'hex'));", _connection);
             insertCommand.ExecuteNonQuery();
@@ -56,7 +56,7 @@ public class RegistrationController : ControllerBase
                 string token = CreateToken(user);
                 return Ok(token);
             }
-            return BadRequest("Wrong username or password");
+            return Unauthorized("Wrong username or password");
         }
         catch (Exception ex)
         {
