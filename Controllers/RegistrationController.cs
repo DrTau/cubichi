@@ -102,4 +102,11 @@ public class RegistrationController : ControllerBase
             return BadRequest(ex.Message);
         }
     }
+
+    [HttpPost, Route("Ping"), Authorize]
+    public IActionResult Ping()
+    {
+        return Ok();
+    }
+
 }
