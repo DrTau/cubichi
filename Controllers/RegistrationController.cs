@@ -82,7 +82,8 @@ public class RegistrationController : ControllerBase
         return jwt;
     }
 
-    [HttpPost, Route("UploadSkin"), Authorize]
+    [HttpPost, Route("UploadSkin")]
+    [DisableFormValueModelBinding]
     public IActionResult UploadSkin(IFormFile file)
     {
         try
