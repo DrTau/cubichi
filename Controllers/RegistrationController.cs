@@ -104,9 +104,10 @@ public class RegistrationController : ControllerBase
     }
 
     [HttpPost, Route("Ping"), Authorize]
-    public IActionResult Ping()
+    public ActionResult<string> Ping()
     {
-        return Ok();
+        var username = User?.Identity?.Name;
+        return Ok(username);
     }
 
 }
